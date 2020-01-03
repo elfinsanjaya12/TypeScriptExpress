@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 import IController from "./InterfaceController";
 
+
 // dummy
 let data: any[] = [
   {
@@ -17,6 +18,7 @@ let data: any[] = [
   }
 ]
 class UserController implements IController {
+
   index(req: Request, res: Response): Response {
     return res.send(data);
   }

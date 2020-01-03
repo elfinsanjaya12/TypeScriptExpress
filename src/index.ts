@@ -8,6 +8,7 @@ import { config as dotenv } from "dotenv";
 
 // router
 import UserRouter from "./routers/UserRouter";
+import AuthRouter from "./routers/AuthRouter";
 
 // class app 
 class App {
@@ -40,15 +41,14 @@ class App {
     })
 
     this.app.use("/users", UserRouter);
+    this.app.use("/auth", AuthRouter);
   }
 }
 
-// setting port
-const port: number = 8000;
 // class app
 const app = new App().app;
 // running
-app.listen(port, () => {
-  console.log(`Server Running di port ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server Running di port ${process.env.PORT}`);
 })
 
